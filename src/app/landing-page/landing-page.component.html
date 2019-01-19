@@ -1,0 +1,81 @@
+<div class="box">
+  <mat-card [formGroup]="loginF" *ngIf="loginFToggle">
+    <ng-container *ngIf="!showSpinner">
+      <mat-card-title> Login Here.. </mat-card-title>
+      <mat-card-subtitle> You must be already registered </mat-card-subtitle>
+      <mat-card-content>
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="username"
+            formControlName="email"
+          />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-content>
+        <mat-form-field>
+          <input
+            type="password"
+            matInput
+            placeholder="password"
+            formControlName="password"
+          />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-content>
+        <button mat-raised-button color="accent" (click)="login()">
+          Login
+        </button>
+      </mat-card-content>
+      <mat-card-content>
+        <button mat-raised-button color="primary" (click)="showSignF()">
+          Singup
+        </button>
+      </mat-card-content>
+    </ng-container>
+    <mat-progress-spinner
+      *ngIf="showSpinner"
+      color="primary"
+      mode="indeterminate"
+      diameter="50"
+    ></mat-progress-spinner>
+  </mat-card>
+  <mat-card [formGroup]="signF" *ngIf="signFToggle">
+    <ng-container *ngIf="!showSpinner_">
+      <mat-card-title> Signup Here.. </mat-card-title>
+      <mat-card-subtitle> New here?? create account. </mat-card-subtitle>
+      <mat-card-content>
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="username"
+            formControlName="email"
+          />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-content>
+        <mat-form-field>
+          <input
+            type="password"
+            matInput
+            placeholder="password"
+            formControlName="password"
+          />
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-content>
+        <button mat-raised-button color="accent" (click)="signup()">
+          Login
+        </button>
+      </mat-card-content>
+    </ng-container>
+    <mat-progress-spinner
+      *ngIf="showSpinner_"
+      color="primary"
+      mode="indeterminate"
+      diameter="50"
+    ></mat-progress-spinner>
+  </mat-card>
+</div>
