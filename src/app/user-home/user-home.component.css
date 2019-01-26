@@ -1,0 +1,11 @@
+ul {
+    display: flex;
+}
+
+li{
+    list-style: none;
+}
+
+mat-card{
+    margin: 10px;
+}

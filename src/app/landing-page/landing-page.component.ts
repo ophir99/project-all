@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { UserServices } from "../services/user.services";
 import { MatSnackBar } from "@angular/material";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-landing-page",
   templateUrl: "./landing-page.component.html",
@@ -17,7 +18,8 @@ export class LandingPageComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private userService: UserServices,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -39,6 +41,7 @@ export class LandingPageComponent implements OnInit {
       res => {
         console.log(res);
         this.snackBar.open("User login..");
+
       },
       err => {
         console.log(err);
@@ -49,7 +52,10 @@ export class LandingPageComponent implements OnInit {
         setTimeout(() => {
           this.loginF.reset();
           this.showSpinner = !true;
+          this.snackBar.dismiss();
+          this.router.navigate(["/home"])
         }, 2000);
+       
       }
     );
   }

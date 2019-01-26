@@ -8,9 +8,11 @@ import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { MaterialModule } from "./material.module";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { UserHomeComponent } from './user-home/user-home.component';
+import { AppDirective } from './app.directive';
 
 @NgModule({
-  declarations: [AppComponent, LandingPageComponent],
+  declarations: [AppComponent, LandingPageComponent, UserHomeComponent, AppDirective],
   imports: [
     BrowserModule,
     AppRoutingModule,
